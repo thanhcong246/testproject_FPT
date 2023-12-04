@@ -1,0 +1,13 @@
+package thongkevieclam.Dao;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class KhaiBaoDao {
+	@Autowired
+	public JdbcTemplate _jdbcTemplate;
+	public void createKhaiBao(Categorys categorys) {
+		String sql = "INSERT INTO categorys (name, description) VALUES (?, ?)";
+		_jdbcTemplate.update(sql, categorys.getName(), categorys.getDescription());
+	}
+}

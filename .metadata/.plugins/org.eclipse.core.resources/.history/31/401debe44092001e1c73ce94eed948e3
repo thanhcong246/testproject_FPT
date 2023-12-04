@@ -1,0 +1,18 @@
+package thongkevieclam.Service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import thongkevieclam.Entity.sinhvien;
+
+@Service
+public class HomeServiceImpl implements HomeServiceI{
+
+	@Override
+	public List<sinhvien> showList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

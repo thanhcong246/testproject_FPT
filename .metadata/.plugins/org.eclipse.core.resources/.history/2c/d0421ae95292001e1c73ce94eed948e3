@@ -1,0 +1,6 @@
+package thongkevieclam.Dto;
+
+public class congviecDto {
+	private String socmnd;
+	private String hoten;
+}

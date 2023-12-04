@@ -1,0 +1,54 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@include file="/WEB-INF/views/layouts/taglib.jsp"%>
+
+<title>Trang chủ</title>
+
+<body>
+	<div class="row mt-4 mb-4">
+		<div class="col-3">
+			<a href='<c:url value="/nhap_khai_bao"/>'><button type="button"
+					class="btn btn-primary">Khai báo thông tin sinh viên</button> </a>
+		</div>
+
+		<div class="col-5">
+			<a href='<c:url value="/cong_viec"/>'><button type="button"
+					class="btn btn-primary">Thông tin việc làm của sinh viên</button> </a>
+		</div>
+
+		<div class="col-12 mt-2">
+			<form action="<c:url value='/search' />" method="get">
+				<div class="input-group">
+					<input type="text" name="keyword" class="form-control"
+						placeholder="Tìm kiếm thông tin cơ bản của sinh viên : Nhập CMND hoặc Họ và tên">
+					<button class="btn btn-success" type="submit">Tìm kiếm</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>STT</th>
+				<th>Số CMND</th>
+				<th>Họ và tên</th>
+				<th>Email</th>
+				<th>Số điện thoại</th>
+				<th>Địa chỉ</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="item" items="${sinhviens }" varStatus="loop">
+				<tr>
+					<td>${loop.index + 1 }</td>
+					<td>${item.socmnd  }</td>
+					<td>${item.hoten  }</td>
+					<td>${item.email  }</td>
+					<td>${item.sodt  }</td>
+					<td>${item.diachi  }</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+</body>

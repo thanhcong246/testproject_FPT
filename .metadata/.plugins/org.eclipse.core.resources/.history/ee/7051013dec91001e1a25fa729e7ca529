@@ -1,0 +1,71 @@
+package thongkevieclam.Entity;
+
+import java.sql.Date;
+
+import javax.persistence.Entity;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+@Entity
+public class totnghiep {
+	private String socmnd;
+	@NotNull(message = "Mã trường không được trống")
+	private int matruong;
+	@NotNull(message = "Mã ngành không được trống")
+	private int manganh;
+	private String hetn;
+	private Date ngaytn;
+	private String loaitn;
+
+	public totnghiep() {
+	}
+
+	public String getSocmnd() {
+		return socmnd;
+	}
+
+	public void setSocmnd(String socmnd) {
+		this.socmnd = socmnd;
+	}
+
+	public int getMatruong() {
+		return matruong;
+	}
+
+	public void setMatruong(int matruong) {
+		this.matruong = matruong;
+	}
+
+	public int getManganh() {
+		return manganh;
+	}
+
+	public void setManganh(int manganh) {
+		this.manganh = manganh;
+	}
+
+	public String getHetn() {
+		return hetn;
+	}
+
+	public void setHetn(String hetn) {
+		this.hetn = hetn;
+	}
+
+	public Date getNgaytn() {
+		return ngaytn;
+	}
+
+	public void setNgaytn(Date ngaytn) {
+		this.ngaytn = ngaytn;
+	}
+
+	public String getLoaitn() {
+		return loaitn;
+	}
+
+	public void setLoaitn(String loaitn) {
+		this.loaitn = loaitn;
+	}
+
+}

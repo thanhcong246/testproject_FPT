@@ -1,0 +1,11 @@
+package thongkevieclam.Service;
+
+import org.springframework.stereotype.Service;
+
+import thongkevieclam.Entity.sinhvien;
+import thongkevieclam.Entity.totnghiep;
+
+@Service
+public interface KhaiBaoServiceI {
+	public void createKhaiBao(sinhvien sVien, totnghiep tNghiep);
+}

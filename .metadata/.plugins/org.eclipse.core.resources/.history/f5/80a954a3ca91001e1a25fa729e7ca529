@@ -1,0 +1,7 @@
+package thongkevieclam.Dto;
+
+public class totnghiep {
+	private String socmnd;
+	private int matruong;
+	private int manganh;
+}

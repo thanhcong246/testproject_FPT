@@ -1,0 +1,17 @@
+package thongkevieclam.Service;
+
+import org.springframework.stereotype.Service;
+
+import thongkevieclam.Entity.sinhvien;
+import thongkevieclam.Entity.totnghiep;
+
+@Service
+public class KhaiBaoServiceImpl implements KhaiBaoServiceI{
+
+	@Override
+	public void createKhaiBao(sinhvien sVien, totnghiep tNghiep) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

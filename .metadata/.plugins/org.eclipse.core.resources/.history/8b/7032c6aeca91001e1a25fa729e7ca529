@@ -1,0 +1,11 @@
+package thongkevieclam.Dto;
+
+import java.sql.Date;
+
+public class totnghiep {
+	private String socmnd;
+	private int matruong;
+	private int manganh;
+	private String hetn;
+	private Date ngaytn;
+}

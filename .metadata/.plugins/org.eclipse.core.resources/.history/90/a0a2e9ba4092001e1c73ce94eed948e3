@@ -1,0 +1,12 @@
+package thongkevieclam.Service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import thongkevieclam.Entity.sinhvien;
+
+@Service
+public class HomeServiceImpl {
+	public List<sinhvien> showListTruong();
+}

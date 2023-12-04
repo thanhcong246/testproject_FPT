@@ -1,0 +1,21 @@
+package thongkevieclam.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import thongkevieclam.Dao.KhaiBaoDao;
+import thongkevieclam.Entity.sinhvien;
+import thongkevieclam.Entity.totnghiep;
+
+@Service
+public class KhaiBaoServiceImpl implements KhaiBaoServiceI {
+
+	@Autowired
+	KhaiBaoDao khaiBaoDao;
+
+	@Override
+	public void createKhaiBao(sinhvien sVien, totnghiep tNghiep) {
+		khaiBaoDao.createKhaiBao(sVien, tNghiep);
+	}
+
+}

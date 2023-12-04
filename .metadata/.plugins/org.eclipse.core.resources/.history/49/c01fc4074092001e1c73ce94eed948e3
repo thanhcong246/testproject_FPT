@@ -1,0 +1,19 @@
+package thongkevieclam.Dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import thongkevieclam.Entity.truong;
+import thongkevieclam.Entity.truongMapper;
+
+@Repository
+public class HomeDao {
+	public List<truong> showListTruong() {
+		List<truong> list = new ArrayList<truong>();
+		String sql = "select * from truong";
+		list = _jdbcTemplate.query(sql, new truongMapper());
+		return list;
+	}
+}

@@ -1,0 +1,10 @@
+package thongkevieclam.Dto;
+
+public class sinhvien {
+	private String socmnd;
+	private String hoten;
+	private String email;
+	private String sodt;
+	private String diachi;
+
+}

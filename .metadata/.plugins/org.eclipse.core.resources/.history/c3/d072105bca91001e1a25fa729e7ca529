@@ -1,0 +1,11 @@
+package thongkevieclam.Dto;
+
+public class sinhvien {
+	private String socmnd;
+	private String socmnd;
+	private String socmnd;
+	private String socmnd;
+	private String socmnd;
+	private String socmnd;
+	private String socmnd;
+}

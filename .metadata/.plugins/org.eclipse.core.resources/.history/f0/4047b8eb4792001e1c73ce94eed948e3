@@ -1,0 +1,31 @@
+package thongkevieclam.Dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import thongkevieclam.Entity.sinhvien;
+import thongkevieclam.Entity.sinhvienMapper;
+
+@Repository
+public class HomeDao {
+	@Autowired
+	public JdbcTemplate _jdbcTemplate;
+
+	public List<sinhvien> showList() {
+		List<sinhvien> list = new ArrayList<sinhvien>();
+		String sql = "select * from sinhvien";
+		list = _jdbcTemplate.query(sql, new sinhvienMapper());
+		return list;
+	}
+
+	public List<sinhvien> search(String keyword) {
+		List<sinhvien> list = new ArrayList<sinhvien>();
+		String sql = "SELECT * FROM sinhvien WHERE hoten LIKE '%\" + keyword + \"%' or hoten LIKE '%" + keyword + "%'";
+		list = _jdbcTemplate.query(sql, new sinhvienMapper());
+		return list;
+	}
+}

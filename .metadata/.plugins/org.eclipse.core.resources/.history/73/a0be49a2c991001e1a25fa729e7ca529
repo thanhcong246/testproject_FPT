@@ -1,0 +1,11 @@
+package thongkevieclam.Dto;
+
+import java.sql.Date;
+
+public class congviec {
+	private String socmnd;
+	private Date ngayvaocongty;
+	private String socmnd;
+	private String socmnd;
+	private String socmnd;
+}

@@ -1,0 +1,7 @@
+package thongkevieclam.Dto;
+
+import org.springframework.jdbc.core.RowMapper;
+
+public class congviecDtoMapper implements RowMapper<T>{
+
+}

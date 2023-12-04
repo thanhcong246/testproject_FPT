@@ -1,0 +1,23 @@
+package thongkevieclam.Dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import thongkevieclam.Entity.sinhvien;
+import thongkevieclam.Entity.totnghiep;
+
+@Repository
+public class KhaiBaoDao {
+	@Autowired
+	public JdbcTemplate _jdbcTemplate;
+
+	public void createKhaiBao(sinhvien sVien, totnghiep tNghiep) {
+		String sqlSinhVien = "INSERT INTO sinhvien (socmnd, hoten, email, sodt, diachi) VALUES (?, ?, ?, ?, ?)";
+		String sqlTotNghiep = "INSERT INTO totnghiep (socmnd, matruong, manganh, hetn, ngaytn, loaitn) VALUES (?, ?, ?, ?, ?, ?)";
+		_jdbcTemplate.update(sqlSinhVien, sVien.getSocmnd(), sVien.getHoten(), sVien.getEmail(), sVien.getSodt(),
+				sVien.getDiachi());
+		_jdbcTemplate.update(sqlTotNghiep, tNghiep.getSocmnd(), tNghiep.getMatruong(), tNghiep.getManganh(),
+				tNghiep.getHetn(), tNghiep.getNgaytn(), tNghiep.getLoaitn());
+	}
+}

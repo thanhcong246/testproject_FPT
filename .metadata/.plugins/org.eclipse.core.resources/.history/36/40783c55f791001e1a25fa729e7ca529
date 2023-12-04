@@ -1,0 +1,68 @@
+package thongkevieclam.Entity;
+
+import java.sql.Date;
+
+import javax.validation.constraints.NotBlank;
+
+public class totnghiep {
+	private String socmnd;
+	@NotBlank(message = "Vui lòng chọn mã trường")
+	private int matruong;
+	@NotBlank(message = "Vui lòng chọn mã ngành")
+	private int manganh;
+	private String hetn;
+	private Date ngaytn;
+	private String loaitn;
+
+	public totnghiep() {
+	}
+
+	public String getSocmnd() {
+		return socmnd;
+	}
+
+	public void setSocmnd(String socmnd) {
+		this.socmnd = socmnd;
+	}
+
+	public int getMatruong() {
+		return matruong;
+	}
+
+	public void setMatruong(int matruong) {
+		this.matruong = matruong;
+	}
+
+	public int getManganh() {
+		return manganh;
+	}
+
+	public void setManganh(int manganh) {
+		this.manganh = manganh;
+	}
+
+	public String getHetn() {
+		return hetn;
+	}
+
+	public void setHetn(String hetn) {
+		this.hetn = hetn;
+	}
+
+	public Date getNgaytn() {
+		return ngaytn;
+	}
+
+	public void setNgaytn(Date ngaytn) {
+		this.ngaytn = ngaytn;
+	}
+
+	public String getLoaitn() {
+		return loaitn;
+	}
+
+	public void setLoaitn(String loaitn) {
+		this.loaitn = loaitn;
+	}
+
+}

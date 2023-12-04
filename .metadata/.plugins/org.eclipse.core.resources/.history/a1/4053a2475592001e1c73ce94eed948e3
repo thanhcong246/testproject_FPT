@@ -1,0 +1,58 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@include file="/WEB-INF/views/layouts/taglib.jsp"%>
+
+<title>Trang chủ</title>
+
+<body>
+	<div class="row mt-4 mb-4">
+		<div class="col-3">
+			<a href='<c:url value="/nhap_khai_bao"/>'><button type="button"
+					class="btn btn-primary">Khai báo thông tin sinh viên</button> </a>
+		</div>
+
+		<div class="col-5">
+			<a href='<c:url value="/"/>'><button type="button"
+					class="btn btn-primary">Thông tin cơ bản của sinh viên</button> </a>
+		</div>
+
+		<div class="col-12 mt-2">
+			<form action="<c:url value='/searchCongViec' />" method="get">
+				<div class="input-group">
+					<input type="text" name="keywordCongViec" class="form-control"
+						placeholder="Tìm kiếm thông tin tốt nghiệp và việc làm của sinh viên : Nhập CMND hoặc Họ và tên">
+					<button class="btn btn-info" type="submit">Tìm kiếm</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>STT</th>
+				<th>Số CMND</th>
+				<th>Họ và tên</th>
+				<th>Mã nghành</th>
+				<th>Mã trường</th>
+				<th>Mã nghành công ty</th>
+				<th>Mã nghành công ty</th>
+				<th>Thời gian làm việc</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="item" items="${congviec }" varStatus="loop">
+				<tr>
+					<td>${loop.index + 1 }</td>
+					<td>${item.socmnd  }</td>
+					<td>${item.hoten  }</td>
+					<td>${item.manganh  }</td>
+					<td>${item.matruong  }</td>
+					<td>${item.manganhcv  }</td>
+					<td>${item.tencongty  }</td>
+					<td>${item.thoigianlamviec  }</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+</body>

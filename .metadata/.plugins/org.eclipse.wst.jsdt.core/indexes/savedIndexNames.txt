@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+D:\Lap_trinh\fsoft\kiemtra1_thong_ke_lam_viec\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3731586865.index
+3197651353.index
+1809804246.index
+1024197536.index
+4188404267.index
+3358734070.index
+1086649760.index

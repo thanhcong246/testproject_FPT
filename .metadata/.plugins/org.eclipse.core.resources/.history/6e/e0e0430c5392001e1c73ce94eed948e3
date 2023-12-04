@@ -1,0 +1,11 @@
+package thongkevieclam.Dto;
+
+public class congviecDto {
+	private String socmnd;
+	private String hoten;
+	private int manganh;
+	private int matruong;
+	private int manganhCv;
+	private String tencongty;
+	
+}

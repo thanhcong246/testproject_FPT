@@ -1,0 +1,53 @@
+package thongkevieclam.Entity;
+
+public class sinhvien {
+	private String socmnd;
+	private String hoten;
+	private String email;
+	private String sodt;
+	private String diachi;
+
+	public sinhvien() {
+	}
+
+	public String getSocmnd() {
+		return socmnd;
+	}
+
+	public void setSocmnd(String socmnd) {
+		this.socmnd = socmnd;
+	}
+
+	public String getHoten() {
+		return hoten;
+	}
+
+	public void setHoten(String hoten) {
+		this.hoten = hoten;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getSodt() {
+		return sodt;
+	}
+
+	public void setSodt(String sodt) {
+		this.sodt = sodt;
+	}
+
+	public String getDiachi() {
+		return diachi;
+	}
+
+	public void setDiachi(String diachi) {
+		this.diachi = diachi;
+	}
+
+}

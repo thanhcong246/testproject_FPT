@@ -1,0 +1,8 @@
+package thongkevieclam.Dto;
+
+public class truong {
+	private int matruong;
+	private String tentruong;
+	private String diachi;
+	private String sodt;
+}

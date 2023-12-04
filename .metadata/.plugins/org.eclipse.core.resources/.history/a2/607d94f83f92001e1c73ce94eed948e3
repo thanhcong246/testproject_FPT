@@ -1,0 +1,8 @@
+package thongkevieclam.Dao;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class HomeController {
+
+}

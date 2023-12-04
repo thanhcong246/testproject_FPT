@@ -1,0 +1,20 @@
+package thongkevieclam.Entity;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
+
+public class nganhMapper implements RowMapper<nganh> {
+
+	@Override
+	public nganh mapRow(ResultSet rs, int rowNum) throws SQLException {
+		nganh nganhObj = new nganh();
+		nganhObj.setManganh(rs.getInt("manganh"));
+		nganhObj.setTennganh(rs.getString("tennganh"));
+		nganhObj.setLoainganh(rs.getString("loainganh"));
+
+		return nganhObj;
+	}
+
+}

@@ -1,0 +1,18 @@
+package thongkevieclam.Dto;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
+
+import com.mysql.cj.result.Row;
+
+public class nganhMapper implements RowMapper<nganh>{
+
+	@Override
+	public nganh mapRow(ResultSet rs, int rowNum) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

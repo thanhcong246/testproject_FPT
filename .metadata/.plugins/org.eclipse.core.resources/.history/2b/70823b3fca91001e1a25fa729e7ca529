@@ -1,0 +1,9 @@
+package thongkevieclam.Dto;
+
+import org.springframework.jdbc.core.RowMapper;
+
+import com.mysql.cj.result.Row;
+
+public class nganhMapper implements RowMapper<T>{
+
+}

@@ -1,0 +1,63 @@
+package thongkevieclam.Controller;
+
+import java.sql.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import thongkevieclam.Entity.sinhvien;
+import thongkevieclam.Entity.totnghiep;
+import thongkevieclam.Service.KhaiBaoServiceI;
+
+@Controller
+public class KhaiBaoController {
+	public ModelAndView _mvIndex = new ModelAndView();
+	@Autowired
+	KhaiBaoServiceI khaiBaoServiceI;
+
+	@GetMapping("/nhap_khai_bao")
+	public ModelAndView khaiBaoForm() {
+		_mvIndex.addObject("truongs", khaiBaoServiceI.showListTruong());
+		_mvIndex.addObject("nghanhs", khaiBaoServiceI.showListNganh());
+		_mvIndex.setViewName("/nhap_khai_bao");
+		return _mvIndex;
+	}
+
+	@PostMapping("/nhap_khai_bao")
+	public String createKhaiBao(@RequestParam String socmnd, @RequestParam String hoten, @RequestParam String email,
+			@RequestParam String sodt, @RequestParam String diachi, @RequestParam Integer matruong,
+			@RequestParam Integer manganh, @RequestParam String hetn, @RequestParam Date ngaytn,
+			@RequestParam String loaitn, BindingResult bindingResult) {
+
+		sinhvien sVien = new sinhvien();
+		sVien.setSocmnd(socmnd);
+		sVien.setHoten(hoten);
+		sVien.setEmail(email);
+		sVien.setSodt(sodt);
+		sVien.setDiachi(diachi);
+
+		totnghiep tNghiep = new totnghiep();
+		tNghiep.setSocmnd(socmnd);
+		tNghiep.setMatruong(matruong);
+		tNghiep.setManganh(manganh);
+		tNghiep.setHetn(hetn);
+		tNghiep.setNgaytn(ngaytn);
+		tNghiep.setLoaitn(loaitn);
+
+		if (sVien.getSocmnd() == null || sVien.getSocmnd().isEmpty()) {
+			_mvIndex.addObject("truongs", khaiBaoServiceI.showListTruong());
+			_mvIndex.addObject("truongs", khaiBaoServiceI.showListTruong());
+			_mvIndex.addObject("nghanhs", khaiBaoServiceI.showListNganh());
+			_mvIndex.setViewName("/nhap_khai_bao");
+		}
+
+			khaiBaoServiceI.createKhaiBao(sVien, tNghiep);
+
+		return "redirect:/";
+	}
+}

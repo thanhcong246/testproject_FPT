@@ -1,0 +1,64 @@
+package thongkevieclam.Controller;
+
+import java.sql.Date;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import thongkevieclam.Entity.sinhvien;
+import thongkevieclam.Entity.totnghiep;
+import thongkevieclam.Service.KhaiBaoServiceI;
+
+@Controller
+@Validated
+public class KhaiBaoController {
+	public ModelAndView _mvIndex = new ModelAndView();
+	@Autowired
+	KhaiBaoServiceI khaiBaoServiceI;
+
+	@GetMapping("/nhap_khai_bao")
+	public ModelAndView khaiBaoForm() {
+		_mvIndex.addObject("truongs", khaiBaoServiceI.showListTruong());
+		_mvIndex.addObject("nghanhs", khaiBaoServiceI.showListNganh());
+		_mvIndex.setViewName("/nhap_khai_bao");
+		return _mvIndex;
+	}
+
+	@PostMapping("/nhap_khai_bao")
+	public ModelAndView createKhaiBao(@ModelAttribute("user") @Valid sinhvien sVien) {
+
+		sinhvien sVien = new sinhvien();
+		sVien.setSocmnd(socmnd);
+		sVien.setHoten(hoten);
+		sVien.setEmail(email);
+		sVien.setSodt(sodt);
+		sVien.setDiachi(diachi);
+
+		totnghiep tNghiep = new totnghiep();
+		tNghiep.setSocmnd(socmnd);
+		tNghiep.setMatruong(matruong);
+		tNghiep.setManganh(manganh);
+		tNghiep.setHetn(hetn);
+		tNghiep.setNgaytn(ngaytn);
+		tNghiep.setLoaitn(loaitn);
+
+		if (sVien.getSocmnd() == null || sVien.getSocmnd().isEmpty()) {
+			_mvIndex.addObject("erros", "Vui lòng nhập đủ thông tin");
+			_mvIndex.addObject("truongs", khaiBaoServiceI.showListTruong());
+			_mvIndex.addObject("nghanhs", khaiBaoServiceI.showListNganh());
+			_mvIndex.setViewName("/nhap_khai_bao");
+			return _mvIndex;
+		}
+
+		khaiBaoServiceI.createKhaiBao(sVien, tNghiep);
+		_mvIndex.setViewName("redirect:/");
+		return _mvIndex;
+	}
+}

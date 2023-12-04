@@ -1,0 +1,14 @@
+package thongkevieclam.Service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import thongkevieclam.Entity.sinhvien;
+
+@Service
+public interface HomeServiceI {
+	public List<sinhvien> showList();
+	
+	public List<sinhvien> search(String keyword);
+}

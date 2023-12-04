@@ -1,0 +1,44 @@
+package thongkevieclam.Entity;
+
+public class truong {
+	private int matruong;
+	private String tentruong;
+	private String diachi;
+	private String sodt;
+
+	public truong() {
+	}
+
+	public int getMatruong() {
+		return matruong;
+	}
+
+	public void setMatruong(int matruong) {
+		this.matruong = matruong;
+	}
+
+	public String getTentruong() {
+		return tentruong;
+	}
+
+	public void setTentruong(String tentruong) {
+		this.tentruong = tentruong;
+	}
+
+	public String getDiachi() {
+		return diachi;
+	}
+
+	public void setDiachi(String diachi) {
+		this.diachi = diachi;
+	}
+
+	public String getSodt() {
+		return sodt;
+	}
+
+	public void setSodt(String sodt) {
+		this.sodt = sodt;
+	}
+
+}
