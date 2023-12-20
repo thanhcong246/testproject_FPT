@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 06, 2023 lúc 02:04 PM
+-- Thời gian đã tạo: Th12 20, 2023 lúc 06:14 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -37,6 +37,15 @@ CREATE TABLE `congviec` (
   `thoigianlamviec` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `congviec`
+--
+
+INSERT INTO `congviec` (`socmnd`, `ngayvaocongty`, `manganh`, `tencongviec`, `tencongty`, `diachicongty`, `thoigianlamviec`) VALUES
+('123', '2023-12-04', 333, 'Nâng mũi', 'Bệnh viện Việt Đức', '234234324', 8),
+('12333332', '2023-12-01', 223, 'dev', 'FPT', '2131231', 10),
+('1234', '2023-12-15', 555, 'Sửa răng', 'Tư nhân', '423424234', 8);
+
 -- --------------------------------------------------------
 
 --
@@ -48,6 +57,16 @@ CREATE TABLE `nganh` (
   `tennganh` varchar(255) DEFAULT NULL,
   `loainganh` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `nganh`
+--
+
+INSERT INTO `nganh` (`manganh`, `tennganh`, `loainganh`) VALUES
+(123, 'Quản trị kinh doanh', 'CNTT'),
+(223, 'Công nghệ phần mềm', 'CNTT'),
+(333, 'Phẫu thuật thẩm mĩ', 'Nha khoa'),
+(555, 'Răng Hàm Mặt', 'Nha Khoa');
 
 -- --------------------------------------------------------
 
@@ -62,6 +81,17 @@ CREATE TABLE `sinhvien` (
   `sodt` varchar(20) DEFAULT NULL,
   `diachi` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `sinhvien`
+--
+
+INSERT INTO `sinhvien` (`socmnd`, `hoten`, `email`, `sodt`, `diachi`) VALUES
+('123', 'nguyễn thành công', 'aitechcc@gmail.com', '12312312312', '13121'),
+('123333', 'nguyễn thành công', 'aitechcc@gmail.com', '3242342', '423'),
+('12333332', 'nguyễn thành công', 'aitechcc2@gmail.com', '123123123', '13121'),
+('1234', 'nguyễn thành công', 'aitechcc@gmail.com', '1321312312', '13121'),
+('333333333333', 'Trần Văn An', 'tranvana@gmail.com', '234234324', '4234242342423423');
 
 -- --------------------------------------------------------
 
@@ -78,6 +108,16 @@ CREATE TABLE `totnghiep` (
   `loaitn` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `totnghiep`
+--
+
+INSERT INTO `totnghiep` (`socmnd`, `matruong`, `manganh`, `hetn`, `ngaytn`, `loaitn`) VALUES
+('123333', 4394, 223, 'kĩ sư', '2023-12-03', 'giỏi'),
+('12333332', 3135, 223, 'kĩ sư', '2023-12-03', 'giỏi'),
+('1234', 3135, 123, 'kĩ sư', '2023-12-03', 'giỏi'),
+('333333333333', 4394, 223, '', '2023-12-10', 'giỏi');
+
 -- --------------------------------------------------------
 
 --
@@ -90,6 +130,14 @@ CREATE TABLE `truong` (
   `diachi` varchar(255) DEFAULT NULL,
   `sodt` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `truong`
+--
+
+INSERT INTO `truong` (`matruong`, `tentruong`, `diachi`, `sodt`) VALUES
+(3135, 'Đh FPT', '473 Trần Đại Nghĩa, Ngũ Hành Sơn, Đà Nẵng', '32323232323'),
+(4394, 'Đh Việt-Hàn', '470 Trần Đại Nghĩa, Ngũ Hành Sơn, Đà Nẵng', '000000000000');
 
 --
 -- Chỉ mục cho các bảng đã đổ
